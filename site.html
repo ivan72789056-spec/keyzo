@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<script>(function(){var t;try{t=localStorage.getItem("keyzo_theme")}catch(e){}if(t!="light"&&t!="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",t)})()</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keyzo — цифровые товары и ключи</title>
+<style>
+:root{--bg:#14121F;--s1:#1F1B30;--s2:#2A2540;--ac:#6C47FF;--ac2:#7C5CFF;--am:#FFC83D;--tx:#fff;--mu:#A9A4C7;--ok:#3DDC97;--t2:#d6d1ee;--fb:#1b1829;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=light]{--bg:#F6F5FB;--s1:#FFFFFF;--s2:#E4E0F4;--tx:#1A1530;--mu:#6B6688;--t2:#3A3556;--fb:#ECE9F7;--ok:#0B7A4D;color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.w{max-width:1400px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;padding:6px 0 2px}
+.top{display:flex;justify-content:space-between;color:var(--mu);font-size:13px;padding:2px 0 8px}
+
+.hd{display:flex;gap:12px;align-items:center}
+.logo{display:flex;align-items:center;gap:8px;font-size:30px;font-weight:700;letter-spacing:-1px}
+.btn{background:var(--s1);border:0;color:var(--tx);padding:13px 18px;border-radius:12px;font:inherit;font-weight:600;cursor:pointer;display:inline-block;text-align:center}.btn:hover{background:var(--s2)}.btn.on{color:#ff6b8a}
+.buy{background:var(--ac);color:#fff;border-radius:10px;padding:10px;text-align:center;border:0;cursor:pointer;font:inherit;font-weight:600;width:100%}.buy:hover{background:var(--ac2)}
+.sw{position:relative;flex:1;min-width:0}.sw svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--mu)}
+.srch{width:100%;background:var(--s1);border:0;color:var(--tx);padding:14px 16px 14px 44px;border-radius:12px;font:inherit}
+.ic{display:flex;gap:2px}.ic a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;color:var(--mu);padding:2px 8px;border-radius:10px}.ic a:hover{color:var(--tx)}
+.nav{display:flex;justify-content:space-between;gap:2px;overflow-x:auto;padding:12px 0 8px;scrollbar-width:none}
+.nav a{display:flex;align-items:center;gap:8px;white-space:nowrap;flex:0 0 auto;padding:8px 10px 8px 8px;border-radius:14px;font-weight:600;font-size:15px;cursor:pointer}.nav a:hover{background:var(--s1)}.nav .mi{width:34px;height:34px;border-radius:10px}.nav .mi .art{width:22px;height:22px}
+.mi{width:28px;height:28px;border-radius:8px;display:inline-grid;place-items:center;overflow:hidden;flex:0 0 auto;position:relative}
+.scw{position:relative;margin-top:8px}.sc{display:flex;gap:12px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none;scroll-behavior:smooth}
+.tile,.hit{position:relative;overflow:hidden;border-radius:18px;color:#fff;font-weight:700;display:flex;align-items:flex-end;padding:14px;line-height:1.15;cursor:pointer}
+.tile{flex:0 0 180px;height:225px;font-size:20px}.hit{flex:0 0 215px;height:250px;font-size:19px}
+.tx{position:relative;z-index:1}.tx small{display:block;font-weight:500;font-size:13px;opacity:.92}
+.art{position:absolute;right:-16px;top:8px;width:82%;opacity:.92;pointer-events:none}.mi .art{position:static;width:18px;height:18px;opacity:1}
+.arr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--s1);color:var(--tx);border:0;font-size:20px;z-index:2;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.hb{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.35);border:0;color:#fff;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:16px;z-index:2}.hb.on{color:#ff6b8a}
+.hh{display:flex;justify-content:space-between;align-items:center;margin-top:26px}.hh h2{margin:0}.hh a{color:var(--mu)}
+.top-up{border:2px solid var(--s2);border-radius:24px;padding:20px;margin:14px 0}
+.tabs{display:flex;gap:18px;border-bottom:1px solid var(--s2);margin-bottom:16px;overflow-x:auto}.tabs button{background:none;border:0;color:var(--mu);font:inherit;font-size:22px;font-weight:700;padding:6px 2px 10px;cursor:pointer;border-bottom:3px solid transparent}.tabs button.on{color:var(--tx);border-color:var(--am)}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1 1 150px}
+.fld{background:var(--s1);border:0;color:var(--tx);padding:14px;border-radius:12px;font:inherit}
+.chip{flex:0 0 auto!important;background:var(--s1);border:0;color:var(--tx);padding:8px 14px;border-radius:20px;font:inherit;cursor:pointer}.chip:hover,.chip.on{background:var(--ac);color:#fff}
+h2{font-size:28px;letter-spacing:-.5px;margin:28px 0 14px}.m{color:var(--mu);font-size:13px;margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.card{background:var(--s1);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px;cursor:pointer}.card:hover{background:var(--s2)}
+.card .ct{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.card .mi{width:34px;height:34px;border-radius:10px}.card .mi .art{width:22px;height:22px}
+.card small{color:var(--mu)}.card b{font-size:20px;line-height:1.2}.card .t{font-size:13px;color:var(--t2);flex:1}
+.more{display:block;width:100%;margin-top:14px;padding:16px;font-size:18px}
+.strip{background:linear-gradient(135deg,#6C47FF,#2B1A7A);color:#fff;border-radius:16px;padding:16px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:26px 0}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px}
+.pimg{position:relative;overflow:hidden;border-radius:20px;min-height:300px;padding:24px;display:flex;align-items:flex-end;color:#fff;font-size:28px;font-weight:700;line-height:1.1}.pimg .art{right:-20px;top:-10px;width:85%}
+.price{font-size:34px;font-weight:700;margin:4px 0 10px}
+.box{background:var(--s1);border-radius:16px;padding:16px;margin-bottom:12px}.ok{color:var(--ok)}
+details{background:var(--s1);border-radius:12px;padding:14px 16px;margin-bottom:10px}summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin:8px 0 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+footer{background:var(--fb);margin-top:50px;padding:36px 0 90px}.fc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}.fc h4{margin:0 0 10px}.fc a{display:block;color:var(--t2);padding:4px 0;font-size:14px}
+.soc{display:flex;gap:10px;margin:22px 0;padding-top:20px;border-top:1px solid var(--s2)}.soc span{width:34px;height:34px;border-radius:10px;background:var(--bg);display:grid;place-items:center;font-size:12px;font-weight:700}
+.sup{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--s1);border-radius:16px;padding:12px 16px;font-size:13px;z-index:6}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:80px;background:var(--ac);color:#fff;padding:12px 20px;border-radius:12px;z-index:30;display:none;max-width:90vw;text-align:center}
+.mod{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:20;padding:16px}.mod.on{display:flex}
+.mb{background:var(--bg);border:1px solid var(--s2);border-radius:20px;padding:22px;width:100%;max-width:440px;max-height:92vh;overflow:auto;position:relative}
+.x{position:absolute;top:8px;right:12px;background:none;border:0;color:var(--mu);font-size:28px;cursor:pointer}
+.qty{display:flex;align-items:center;gap:14px;margin:6px 0 14px}.qty button{width:38px;height:38px;border-radius:10px;border:0;background:var(--s1);color:var(--tx);font-size:20px;cursor:pointer}
+.tot{display:flex;justify-content:space-between;font-size:18px;margin:14px 0}
+.key{font-family:ui-monospace,Consolas,monospace;font-size:17px;letter-spacing:1px;background:var(--s1);padding:12px;border-radius:10px;text-align:center;margin:8px 0;user-select:all}
+.ar{display:grid;grid-template-columns:2fr 1.1fr .8fr 2fr .8fr auto;gap:8px;margin-bottom:8px}.ar>*{min-width:0}.ar .fld,#adm .row .fld{width:100%}
+:root[data-theme=light] :is(.card,.box,details,.srch,.fld,.btn,.sup,.qty button){box-shadow:0 0 0 1px var(--s2)}
+@media(max-width:760px){.hd .cat{display:none}.logo{font-size:24px}.ic span{display:none}.tile{flex-basis:150px;height:190px;font-size:18px}.hit{flex-basis:170px;height:210px}.pg{grid-template-columns:1fr}h2{font-size:22px}.ar{grid-template-columns:1fr 1fr}.arr{display:none}}
+
+header .w{position:relative}
+.old{color:var(--mu);font-size:.6em;font-weight:500;text-decoration:line-through}.card .old{font-size:13px}.price .old{font-size:18px}
+.bdg{background:#ff4d6d;color:#fff;border-radius:8px;padding:1px 7px;font-size:12px;font-weight:700;display:inline-block;text-decoration:none}.bdg.bt{position:absolute;top:14px;left:14px;z-index:2}
+select.fld{color:var(--tx)}option{background:var(--s1);color:var(--tx)}.fl .fld{flex:1 1 140px}
+.mm{display:none;position:absolute;left:16px;right:16px;top:100%;background:var(--s1);border:1px solid var(--s2);border-radius:16px;padding:12px;z-index:10;box-shadow:0 12px 32px rgba(0,0,0,.4)}.mm.on{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px}
+.mm a{display:flex;align-items:center;gap:10px;padding:8px;border-radius:12px;font-weight:600}.mm a:hover{background:var(--s2)}.mm .m{margin:0;display:block;font-weight:400}
+.hint{background:none;border:0;color:var(--mu);text-decoration:underline;cursor:pointer;font:inherit;font-size:13px;padding:8px 0 0}
+.stp{display:flex;gap:4px;flex-wrap:wrap}.stp span{font-size:12px;padding:2px 10px;border-radius:12px;background:var(--s2);color:var(--mu)}.stp .on{background:var(--ac);color:#fff}
+.pt-tabs button{font-size:18px}.pp ol{margin:0;padding-left:20px;color:var(--t2)}.pp li{margin-bottom:6px}
+.ar{grid-template-columns:2fr 1.1fr .8fr 2fr .8fr .7fr auto!important}
+@media(max-width:760px){.ar{grid-template-columns:1fr 1fr!important}}
+.soc a{width:42px;height:42px;border-radius:12px;background:var(--ac);color:#fff;display:grid;place-items:center;transition:background .15s,transform .15s}.soc a:hover{background:var(--am);color:#1A1530;transform:translateY(-2px)}.soc svg{width:22px;height:22px}.soc .cut{fill:var(--ac)}.soc a:hover .cut{fill:var(--am)}
+
+.tl{display:flex;gap:8px;align-items:center}.dd{position:relative}.dd>button{background:var(--s1);border:0;color:var(--tx);font:inherit;font-size:13px;padding:5px 11px;border-radius:9px;cursor:pointer}.dd>button:hover{background:var(--s2)}
+.ddm{display:none;position:absolute;left:0;top:calc(100% + 6px);background:var(--s1);border:1px solid var(--s2);border-radius:12px;padding:6px;min-width:150px;z-index:12;box-shadow:0 10px 28px rgba(0,0,0,.4)}.ddm.on{display:block}
+.ddm button{display:flex;gap:8px;width:100%;background:none;border:0;color:var(--tx);font:inherit;font-size:14px;padding:8px 10px;border-radius:8px;cursor:pointer;text-align:left}.ddm button:hover{background:var(--s2)}.ddm button.on{color:var(--am)}
+.thm{display:flex;gap:4px;border-top:1px solid var(--s2);margin-top:6px;padding-top:6px}.thm button{justify-content:center}
+.ah{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-top:18px}.ah h2{margin:0 0 4px}.ahb{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.dy{font-size:13px;color:var(--am)}
+.atabs{display:flex;gap:6px;margin:16px 0;border-bottom:1px solid var(--s2);overflow-x:auto}.atabs button{background:none;border:0;border-bottom:3px solid transparent;color:var(--mu);font:inherit;font-weight:600;padding:10px 14px;cursor:pointer;white-space:nowrap}.atabs button.on{color:var(--tx);border-color:var(--ac)}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:14px}.kpi .box{margin:0}.kpi b{display:block;font-size:30px;line-height:1.15}.kpi small{color:var(--mu)}
+.bars{display:flex;align-items:flex-end;gap:10px;margin-top:12px}.bars div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;min-height:130px}.bars i{display:block;width:100%;background:var(--ac);border-radius:6px 6px 0 0}.bars span{font-size:11px;color:var(--mu)}.bars em{font-size:12px;font-style:normal}
+.at{display:grid;grid-template-columns:2.2fr 1.3fr .9fr .8fr .9fr 2fr auto;gap:8px;align-items:center}.at>*{min-width:0}.ath{color:var(--mu);font-size:12px;padding:0 4px}.at select.fld,.at .fld{width:100%}
+@media(max-width:760px){.at{grid-template-columns:1fr 1fr}.ath{display:none}.at>:first-child,.at>:nth-child(6){grid-column:1/-1}}
+</style></head><body>
+<header><div class="w">
+<div class="top"><span class="tl" id="tools"></span><a href="#seller">Начать продавать</a></div>
+<div class="hd"><a class="logo" href="#home"><svg width="36" height="36" viewBox="0 0 56 56"><rect width="56" height="56" rx="14" fill="#6C47FF"/><circle cx="19" cy="28" r="8" fill="none" stroke="#fff" stroke-width="4"/><circle cx="19" cy="28" r="2.5" fill="#FFC83D"/><path d="M27 28h20M38 28v8M46 28v7" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>keyzo</a>
+<button class="btn cat" data-menu>&#9776; Каталог</button>
+<div class="sw"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input class="srch" id="q" placeholder="Найти товар"></div>
+<nav class="ic"><a href="#favs"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.6-9.5-10A5 5 0 0112 7a5 5 0 019.5 4C20 16.4 12 21 12 21z"/></svg><span>Избранное</span></a><a href="#orders"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v10l-8 4-8-4V7zM4 7l8 4 8-4M12 11v10"/></svg><span>Заказы</span></a><a href="#profile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Профиль</span></a></nav></div>
+<nav class="nav" id="nav"></nav><div class="mm" id="mm"></div></div></header>
+<main class="w" id="app"></main>
+<footer><div class="w"><div class="fc">
+<div><h4>Партнёрам</h4><a href="#seller">Стать продавцом на keyzo</a><a href="#seller">Партнёрская программа</a><a href="#seller">Правила для продавца</a><a href="#seller">Автоматическое B2B-решение</a></div>
+<div><h4>Покупателям</h4><a href="#faq">Часто задаваемые вопросы</a><a href="#legal">Политика возврата средств</a><a href="#catalog">Каталог товаров</a></div>
+<div><h4>keyzo</h4><a href="#contacts">Контакты</a><a href="#reviews">Отзывы</a><a href="#legal">Публичная оферта</a><a href="#legal">Политика конфиденциальности</a></div></div>
+<div class="soc"><a href="https://vk.com" target="_blank" rel="noopener noreferrer" aria-label="VK" title="VK"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="16.2" text-anchor="middle" font-size="11.5" font-weight="800" font-family="Arial,sans-serif" fill="currentColor">VK</text></svg></a><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg></a><a href="https://telegram.org" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5L20.5 4.5 17.5 19.5 12.5 15.5 9.5 18.5 9 13.5z" fill="currentColor"/></svg></a><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="4" fill="currentColor"/><path class="cut" d="M10 9.5v5l4.5-2.5z"/></svg></a><a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.5a3.5 3.5 0 11-3.5-3.5M14 4c.4 2.4 2 4 4.5 4.2" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></a><a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></a><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h2.8l.5-3H14V8.3c0-.9.3-1.5 1.6-1.5h1.8V4.1C17 4 16 4 15 4c-2.3 0-3.8 1.4-3.8 3.9V10H8.5v3h2.7v8z" fill="currentColor"/></svg></a></div>
+<div style="color:var(--mu);font-size:13px">© 2024–2026 Keyzo Digital Ltd. Все права защищены<br>Поддержка: support@keyzo.example</div></div></footer>
+<a class="sup" href="#contacts">Поддержка</a><div class="toast" id="ts"></div>
+<div class="mod" id="mod"></div>
+<script src="products.js"></script>
+<script>
+var C=["Все","Скидки","Игры","Пополнение","Подписки","ИИ-сервисы","Донат","Подарочные карты"];
+var G=["linear-gradient(135deg,#6C47FF,#1E1050)","linear-gradient(135deg,#1F6FEB,#0B2A66)","linear-gradient(135deg,#E8801E,#6B2A08)","linear-gradient(135deg,#0FA37F,#08382F)","linear-gradient(135deg,#D63B8F,#4A1236)","linear-gradient(135deg,#444B66,#15192B)"];
+var PJS=!!window.PRODUCTS,P=window.PRODUCTS||[["Steam: пополнение кошелька","Пополнение",1.07,"RUB, автоматически за 1–5 минут",6195238,0],["Steam KZT: пополнение","Пополнение",0.2,"Казахстан, тенге (KZT), 24/7",1488659,0],["PlayStation Network: карта","Подарочные карты",1190,"Регион Турция, код на 1000 TL",412300,15],["ChatGPT Plus на 1 месяц","ИИ-сервисы",2249,"Подписка на ваш аккаунт, 24/7",1000,25],["Claude Pro на 1 месяц","ИИ-сервисы",2289,"Подписка на ваш аккаунт, 24/7",1000,10],["Roblox: 800 Robux","Донат",890,"Моментальная доставка на аккаунт",218764,12],["Apple iTunes: карта 25 $","Подарочные карты",2390,"Регион США, код на почту",96320,0],["Telegram Premium на 3 месяца","Подписки",1190,"Активация по юзернейму",54210,30],["Spotify Premium на 1 год","Подписки",3490,"Индивидуальный план, без VPN",31402,40],["Call of Duty: Modern Warfare 4","Игры",3299,"Ключ активации, Steam, СНГ",8731,35],["Blizzard Battle.net: 1000 ₽","Подарочные карты",1050,"Баланс на аккаунт, регион РФ",44119,0],["Genshin Impact: 6480 кристаллов","Донат",8190,"Пополнение по UID, без пароля",23010,8],["Minecraft Java + Bedrock","Игры",1790,"Лицензия на ваш аккаунт Microsoft",15870,50],["Xbox Game Pass на 3 месяца","Подписки",2490,"Ultimate, активация по коду",19230,20],["Discord Nitro на 1 месяц","Подписки",890,"Подарочная ссылка, моментально",77212,18],["Google Play: карта 1000 ₽","Подарочные карты",1090,"Код для магазина приложений",60340,5]];
+var S=window.SITE||{t:"Ключи, подписки и пополнения за минуты",p:"Автоматическая выдача 24/7.",b:"Открыть каталог"};if(!S.ns)S.ns="keyzo-9496b72d";
+var cur=location.hash.slice(1)||"home",last,st={cat:"Все",q:"",tab:"Steam",amt:1000,lg:"",n:6,so:"pop",min:0,max:0,dis:false},$=function(s){return document.querySelector(s)},RT={Steam:1.07,PlayStation:1.1,Telegram:1.04,Apple:1.15},M={};
+function sg(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return k in M?M[k]:d}}
+function ss(k,v){M[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function fmt(n){return Math.round(n).toLocaleString("ru-RU").replace(/\u00a0/g," ")}
+
+function toast(t){var e=$("#ts");e.textContent=t;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(function(){e.style.display="none"},2400)}
+var IC={key:'<circle cx="30" cy="50" r="16"/><circle cx="30" cy="50" r="4" fill="#fff"/><path d="M46 50h40M70 50v14M82 50v10"/>',
+spark:'<path d="M50 8C54 36 64 46 92 50 64 54 54 64 50 92 46 64 36 54 8 50 36 46 46 36 50 8z"/>',
+burst:'<path d="M50 10v80M10 50h80M22 22l56 56M78 22L22 78"/>',
+ps:'<path d="M22 38l12-20 12 20z"/><circle cx="72" cy="28" r="11"/><path d="M18 62l22 22M40 62L18 84"/><rect x="61" y="62" width="22" height="22" rx="2"/>',
+steam:'<circle cx="64" cy="36" r="20"/><circle cx="64" cy="36" r="6" fill="#fff"/><path d="M14 66l28-12"/><circle cx="28" cy="68" r="12"/>',
+robux:'<rect x="26" y="26" width="48" height="48" rx="5" transform="rotate(15 50 50)"/><rect x="43" y="43" width="14" height="14" transform="rotate(15 50 50)" fill="#fff"/>',
+card:'<rect x="10" y="24" width="80" height="52" rx="8"/><path d="M10 40h80M22 62h20"/>',
+plane:'<path d="M10 48L90 14 72 86 46 64 34 82 32 60z"/>',
+arcs:'<path d="M16 38Q50 26 84 40M22 56Q50 46 78 58M28 72Q50 66 72 74"/>',
+aim:'<circle cx="50" cy="50" r="28"/><path d="M50 8v22M50 70v22M8 50h22M70 50h22"/><circle cx="50" cy="50" r="4" fill="#fff"/>',
+swirl:'<circle cx="50" cy="50" r="34"/><path d="M50 16a34 34 0 0 1 34 34M50 84A34 34 0 0 1 16 50" stroke-width="12"/>',
+gem:'<path d="M50 8l30 26-30 58L20 34z"/><path d="M20 34h60M38 34l12 58 12-58"/>',
+cube:'<path d="M50 10l36 20v40L50 90 14 70V30z"/><path d="M14 30l36 20 36-20M50 50v40"/>',
+xbox:'<circle cx="50" cy="50" r="36"/><path d="M32 32l36 36M68 32L32 68"/>',
+pad:'<rect x="10" y="30" width="80" height="44" rx="22"/><path d="M30 52h18M39 43v18"/><circle cx="66" cy="46" r="4" fill="#fff"/><circle cx="76" cy="58" r="4" fill="#fff"/>',
+play:'<path d="M26 14l60 36-60 36z"/>',
+coin:'<circle cx="50" cy="50" r="36"/><path d="M40 70V30h14a10 10 0 010 20H40M34 58h26"/>',
+pct:'<path d="M24 76L76 24"/><circle cx="30" cy="30" r="10"/><circle cx="70" cy="70" r="10"/>'};
+function art(k){return '<svg class="art" viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(IC[k]||IC.key)+'</svg>'}
+var KP=["steam","steam","ps","spark","burst","robux","card","plane","arcs","aim","swirl","gem","cube","xbox","pad","play"];
+var TL=[["ChatGPT","spark",0],["PlayStation","ps",1],["Claude","burst",2],["Steam","steam",3],["Roblox","robux",4],["Battle.net","swirl",5],["Spotify","arcs",3],["Telegram","plane",1],["Discord","pad",0],["Xbox","xbox",3],["Minecraft","cube",5],["Genshin","gem",4]];
+var QR=[["Донат","c","Донат","coin",2],["Скидки","c","Скидки","pct",4],["Пополнение PSN","q","PlayStation","ps",1],["Roblox","q","Roblox","robux",5],["Пополнение Steam","q","Steam","steam",3],["Подарочные карты","c","Подарочные карты","card",0],["Подписки","c","Подписки","arcs",3],["Игры","c","Игры","pad",0]];
+function isF(i){return sg("keyzo_fav",[]).indexOf(P[i][0])>-1}
+function card(i){var p=P[i];return '<div class="card" data-open="'+i+'"><div class="ct"><small>'+esc(p[1])+'</small><i class="mi" style="background:'+G[i%6]+'">'+art(KP[i])+'</i></div><b>'+pr(p)+'</b>'+(dc(p)?'<span><s class="old">'+mny(old(p))+'</s> <span class="bdg">-'+dc(p)+'%</span></span>':'')+'<span class="t">'+esc(p[0])+'</span><small>'+fmt(p[4])+' продаж</small><button class="buy" data-buy="'+i+'">Купить</button></div>'}
+function hit(i){var p=P[i];return '<div class="hit" data-open="'+i+'" style="background:'+G[i%6]+'">'+art(KP[i])+(dc(p)?'<span class="bdg bt">-'+dc(p)+'%</span>':'')+'<button class="hb'+(isF(i)?" on":"")+'" data-fav="'+i+'" aria-label="Fav">♥</button><span class="tx">'+esc(p[0].split(":")[0])+'<small>'+pr(p)+'</small></span></div>'}
+function grid(a){a=a.filter(function(i){return P[i]});return a.length?'<div class="grid">'+a.map(card).join("")+'</div>':'<div class="box">Ничего не найдено. Попробуйте другой запрос или откройте весь каталог.</div>'}
+function nav(){$("#nav").innerHTML=QR.map(function(x){return '<a href="#catalog" data-'+x[1]+'="'+x[2]+'"><i class="mi" style="background:'+G[x[4]]+'">'+art(x[3])+'</i>'+x[0]+'</a>'}).join("")}
+function topup(){return '<div class="top-up"><div style="color:var(--mu);margin-bottom:6px">Пополнение сервисов</div><div class="tabs" id="tabs">'+["Steam","PlayStation","Telegram","Apple"].map(function(t){return '<button data-t="'+t+'" class="'+(t==st.tab?"on":"")+'">'+t+'</button>'}).join("")+'</div><div class="row"><input class="fld" id="amt" type="number" value="'+st.amt+'" min="100"><input class="fld" id="lg" placeholder="Логин '+st.tab+'" value="'+esc(st.lg)+'" style="flex:2 1 240px"><button class="buy" id="bt" style="flex:1 1 200px;width:auto">Купить за 1 070 ₽</button></div><button class="hint" data-hint>Как узнать логин?</button><div class="row" style="margin-top:8px">'+[200,500,1000,2000].map(function(v){return '<button class="chip" data-v="'+v+'">'+v+' ₽</button>'}).join("")+'</div></div>'}
+function home(){var ix=P.map(function(x,k){return k}).sort(function(a,b){return P[b][4]-P[a][4]});
+return '<div class="scw"><div class="sc">'+TL.map(function(t){return '<a class="tile" href="#catalog" data-q="'+t[0]+'" style="background:'+G[t[2]]+'">'+art(t[1])+'<span class="tx">'+t[0]+'</span></a>'}).join("")+'</div><button class="arr" data-arr aria-label="Next">→</button></div>'+topup()
++'<div class="hh"><h2>Хиты продаж</h2><a href="#catalog">Все товары ▾</a></div><div class="sc">'+[0,3,4,5,7,8,14,11,9].filter(function(i){return P[i]}).map(hit).join("")+'</div>'
++'<h2>Популярное</h2>'+grid(ix.slice(0,st.n))+(st.n<ix.length?'<button class="btn more" data-more>Показать ещё</button>':'')
++'<div class="strip"><div><b style="font-size:20px">'+esc(S.t)+'</b><div style="opacity:.9">'+esc(S.p)+'</div></div><a class="btn" href="#catalog" style="margin-left:auto;background:var(--am);color:#1A1530">'+esc(S.b)+'</a></div>'}
+
+var CUR=sg("keyzo_cur","RUB"),CS={RUB:["₽",1,0],KZT:["₸",5.3,0],USD:["$",.011,1],EUR:["€",.0097,1]};
+function mny(v){var c=CS[CUR]||CS.RUB,x=v*c[1],t=(v<5||c[2])?x.toFixed(2):fmt(x);return c[2]?c[0]+t:t+" "+c[0]}
+function dc(p){return +p[5]>0?+p[5]:0}
+function old(p){return p[2]/(1-dc(p)/100)}
+function pr(p){return p[2]<5?"1 "+p[0].split(":")[0]+" = "+mny(p[2]):mny(p[2])}
+function dl(p){return /^(Пополнение|Донат)$/.test(p[1])?"Выдача: 1–5 минут":"Выдача: мгновенно"}
+var STP={"Пополнение":[4,5,6],"Донат":[4,5,6],"Подарочные карты":[1,2,3],"Игры":[1,2,3],"Подписки":[5,7,8],"ИИ-сервисы":[5,7,8]},
+ST=["","Оплатите заказ и получите код или ключ.","Откройте магазин или клиент и выберите «Активировать код».","Введите код и подтвердите активацию.","Укажите логин, UID или ID аккаунта.","Оплатите заказ.","Баланс или валюта придут в течение 1–5 минут.","Напишите в поддержку и укажите номер заказа.","Подписка включится на вашем аккаунте."],
+RV=[["Алексей","Пополнил Steam за 2 минуты, всё пришло сразу.",5],["Мария","Взяла Spotify на год, работает без проблем.",5],["Игорь","Ключ не подошёл по региону, поддержка быстро заменила.",4],["Dmitry","Покупаю здесь уже второй год, цены лучше всех.",5]],
+HT={Steam:"Steam: нажмите на ник справа вверху, затем «Об аккаунте». Логин указан под названием аккаунта.",PlayStation:"PlayStation: откройте «Настройки», затем «Пользователи и аккаунты». Онлайн-ID указан в профиле.",Telegram:"Telegram: откройте «Настройки», имя пользователя начинается с @.",Apple:"Apple: ваш Apple ID — это email, указанный в настройках аккаунта."};
+function ptabs(i){var p=P[i],s=(STP[p[1]]||[5,7,8]).map(function(k){return '<li>'+ST[k]+'</li>'}).join(""),r=[0,1,2].map(function(k){var v=RV[(i+k)%4];return '<div class="box"><b>'+v[0]+'</b> <span style="color:var(--am)">'+"★".repeat(v[2])+'</span><p class="m" style="margin:6px 0 0">'+v[1]+'</p></div>'}).join("");
+return '<div class="tabs pt-tabs" id="pt" style="margin-top:26px"><button class="on" data-pt="0">Описание</button><button data-pt="1">Как активировать</button><button data-pt="2">Отзывы</button></div><div class="pp"><p>'+esc(p[3])+'</p><p class="m">'+esc(p[1])+' · '+dl(p)+'</p></div><div class="pp" style="display:none"><ol>'+s+'</ol></div><div class="pp" style="display:none">'+r+'</div>'}
+
+var VU="https://api.counterapi.dev/v1/";
+function vk(n,k){return VU+encodeURIComponent(n)+"/"+encodeURIComponent(k)}
+function fj(u){var c=new AbortController(),t=setTimeout(function(){c.abort()},4000);return fetch(u,{signal:c.signal}).then(function(r){clearTimeout(t);if(r.status==404)return{count:0};if(!r.ok)throw 0;return r.json()}).then(function(j){var v=j&&(j.count!=null?j.count:j.value);return +v||0})}
+function day(d){d=d||new Date();return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)}
+function countVisit(){try{if(sessionStorage.getItem("keyzo_v"))return;sessionStorage.setItem("keyzo_v","1")}catch(e){}
+var lv=sg("keyzo_vl",{});lv[day()]=(lv[day()]||0)+1;ss("keyzo_vl",lv);var n=S.ns;fj(vk(n,"all")+"/up").catch(function(){});fj(vk(n,"d-"+day())+"/up").catch(function(){})}
+function loadStats(done){var n=S.ns,days=[];for(var i=6;i>=0;i--){var d=new Date();d.setDate(d.getDate()-i);days.push(day(d))}
+Promise.all([fj(vk(n,"all"))].concat(days.map(function(d){return fj(vk(n,"d-"+d))}))).then(function(r){done({ok:1,total:r[0],days:days,vals:r.slice(1)})}).catch(function(){var lv=sg("keyzo_vl",{});done({ok:0,total:Object.keys(lv).reduce(function(a,k){return a+lv[k]},0),days:days,vals:days.map(function(d){return lv[d]||0})})})}
+window.addEventListener("beforeunload",function(e){if(st.dirty){e.preventDefault();e.returnValue=""}});
+function ost(x){if(!x.ts)return 3;var a=Date.now()-x.ts;return a<8000?1:a<20000?2:3}
+function menu(){var ic={"Скидки":"pct","Игры":"pad","Пополнение":"steam","Подписки":"arcs","ИИ-сервисы":"spark","Донат":"coin","Подарочные карты":"card"};return C.map(function(c,k){var n=P.filter(function(p){return c=="Все"?1:c=="Скидки"?dc(p)>0:p[1]==c}).length;return '<a href="#catalog" data-c="'+c+'"><i class="mi" style="background:'+G[k%6]+'">'+art(c=="Все"?"key":ic[c])+'</i><span>'+(c=="Все"?"Все товары":c)+'<small class="m">'+n+'</small></span></a>'}).join("")}
+function catIx(){var a=[];P.forEach(function(p,i){if(!(st.cat=="Все"||(st.cat=="Скидки"?dc(p)>0:p[1]==st.cat)))return;if(st.q&&p[0].toLowerCase().indexOf(st.q.toLowerCase())<0)return;if(st.dis&&!dc(p))return;if(st.min&&p[2]<st.min)return;if(st.max&&p[2]>st.max)return;a.push(i)});var so=st.so;a.sort(function(x,y){var A=P[x],B=P[y];return so=="p1"?A[2]-B[2]:so=="p2"?B[2]-A[2]:so=="d"?dc(B)-dc(A):B[4]-A[4]});return a}
+function rl(){var c=$("#cl");if(c)c.innerHTML=grid(catIx())}
+function cat(){return '<h2>Каталог'+(st.q?': «'+esc(st.q)+'»':'')+'</h2><div class="row" style="margin-bottom:12px">'+C.map(function(c){return '<button class="chip '+(c==st.cat?"on":"")+'" data-c="'+c+'">'+c+'</button>'}).join("")+'</div><div class="row fl" style="margin-bottom:14px"><select class="fld" id="so"><option value="pop">Сначала популярные</option><option value="p1">Сначала дешевле</option><option value="p2">Сначала дороже</option><option value="d">Больше скидка</option></select><input class="fld" id="mn" type="number" min="0" placeholder="От, ₽"><input class="fld" id="mx" type="number" min="0" placeholder="До, ₽"><button class="chip'+(st.dis?" on":"")+'" id="dd">Только со скидкой</button></div><div id="cl">'+grid(catIx())+'</div>'}
+function prod(i){var p=P[i];if(!p)return cat();var sim=P.map(function(x,k){return k}).filter(function(k){return k!=i}).sort(function(a,b){return (P[b][1]==p[1])-(P[a][1]==p[1])}).slice(0,4);
+return '<div class="pg"><div class="pimg" style="background:'+G[i%6]+'">'+art(KP[i])+'<span class="tx">'+esc(p[0])+'</span></div><div><small class="m">'+esc(p[1])+'</small><h1 style="margin:0 0 6px;font-size:30px;letter-spacing:-1px">'+esc(p[0])+'</h1><div class="m" style="margin:0 0 6px;color:var(--am)">★ '+(4.7+(i*7%4)/10).toFixed(1)+' <span style="color:var(--mu)">· Отзывов: '+fmt(Math.round(p[4]/40)+3)+'</span></div><div class="price">'+pr(p)+(dc(p)?' <s class="old">'+mny(old(p))+'</s> <span class="bdg">-'+dc(p)+'%</span>':'')+'</div><p class="ok">Автовыдача · в наличии</p><p class="m" style="margin:0 0 6px">'+dl(p)+'</p><p class="m">'+esc(p[3])+'. Продано '+fmt(p[4])+' раз.</p><div class="row" style="margin:12px 0"><button class="buy" data-buy="'+i+'" style="flex:2 1 180px">Купить</button><button class="btn'+(isF(i)?" on":"")+'" data-fav="'+i+'">♥ В избранное</button></div><div class="box m">Гарантия 24 часа. Если товар не подошёл, вернём деньги или заменим.</div></div></div>'+ptabs(i)+'<h2>Похожие товары</h2>'+grid(sim)}
+function favs(){var f=sg("keyzo_fav",[]),ix=[];P.forEach(function(p,i){if(f.indexOf(p[0])>-1)ix.push(i)});return '<h2>Избранное</h2>'+(ix.length?grid(ix):'<div class="box">В избранном пока ничего нет. Нажмите ♥ на товаре.</div>')}
+function orders(){var o=sg("keyzo_orders",[]);if(o.some(function(x){return ost(x)<3}))setTimeout(function(){if(cur=="orders")route()},4000);return '<h2>Заказы</h2>'+(o.length?o.map(function(x){return '<div class="box"><div style="display:flex;justify-content:space-between;gap:10px"><b>'+esc(x.t)+' × '+x.q+'</b><div class="stp">'+["Оплачен","Выдан","Завершён"].map(function(n,k){return '<span class="'+(k<ost(x)?"on":"")+'">'+n+'</span>'}).join("")+'</div></div><div class="m" style="margin:4px 0 0">'+x.id+' · '+esc(x.d)+' · '+mny(x.s)+' · '+esc(x.m)+'</div>'+(x.k?'<div class="key">'+esc(x.k)+'</div>':'')+'</div>'}).join(""):'<div class="box">Пока пусто. Оформите первый заказ в каталоге.</div>')}
+function profile(){var u=sg("keyzo_user",null);if(!u)return '<h2>Вход в профиль</h2><div class="box" style="max-width:420px"><input class="fld" id="pe" type="email" placeholder="Ваш email" style="width:100%;margin-bottom:10px"><button class="buy" id="pl">Войти</button></div>';
+return '<h2>Профиль</h2><div class="box" style="max-width:420px">Вы вошли как <b id="pu"></b><p class="m" style="margin:8px 0 14px">Заказов: '+sg("keyzo_orders",[]).length+'<br>В избранном: '+sg("keyzo_fav",[]).length+'</p><button class="btn" id="po">Выйти</button></div>'}
+function closeM(){var m=$("#mod");m.className="mod";m.innerHTML=""}
+function rk(){var c="ABCDEFGHJKLMNPQRSTUVWXYZ23456789",s="";for(var i=0;i<15;i++){s+=c[Math.floor(Math.random()*c.length)];if(i%5==4&&i<14)s+="-"}return s}
+function checkout(it){var m=$("#mod"),q=it.q||1,pm="СБП",u=sg("keyzo_user",null),sp=it.step||1;
+m.innerHTML='<div class="mb"><button class="x" data-close aria-label="Close">×</button><h3 style="margin:0 0 12px">Оформление заказа</h3><div class="box"><b id="ci"></b><div class="m" id="cn" style="margin:4px 0 0"></div></div>'+(it.fixed?'':'<small class="m">Количество</small><div class="qty"><button id="qm">−</button><b id="qn"></b><button id="qp">+</button></div>')+'<input class="fld" id="ce" type="email" placeholder="Email для получения заказа" style="width:100%;margin:6px 0 12px"><small class="m">Способ оплаты</small><div class="row" style="margin:6px 0">'+["СБП","Банковская карта","Электронный кошелёк"].map(function(x,k){return '<button class="chip'+(k?"":" on")+'" data-pm="'+x+'">'+x+'</button>'}).join("")+'</div><div class="tot"><span>К оплате</span><b id="ct2"></b></div><button class="buy" id="pay">Оплатить</button><p class="m" style="margin:10px 0 0">Демо: деньги не списываются.</p></div>';
+m.className="mod on";$("#ci").textContent=it.t;$("#cn").textContent=it.note||"";if(u)$("#ce").value=u.email;
+function upd(){if($("#qn"))$("#qn").textContent=q;$("#ct2").textContent=mny(it.p*q)}
+if($("#qm")){$("#qm").onclick=function(){q=Math.max(sp,q-sp);upd()};$("#qp").onclick=function(){q=Math.min(q+sp,5000);upd()}}
+m.querySelectorAll("[data-pm]").forEach(function(b){b.onclick=function(){pm=b.dataset.pm;m.querySelectorAll("[data-pm]").forEach(function(x){x.classList.toggle("on",x==b)})}});
+$("#pay").onclick=function(){if(!okm($("#ce").value))return toast("Введите корректный email");var o={id:"KZ-"+Math.floor(10000+Math.random()*89999),t:it.t,q:q,s:Math.round(it.p*q),d:new Date().toLocaleDateString(L),k:it.k?rk():"",m:pm,ts:Date.now()},a=sg("keyzo_orders",[]);a.unshift(o);ss("keyzo_orders",a);
+m.innerHTML='<div class="mb"><button class="x" data-close aria-label="Close">×</button><h3 style="margin:0 0 8px">Заказ оформлен!</h3><p class="m">Номер заказа: '+o.id+'</p>'+(o.k?'<small class="m">Ваш код</small><div class="key">'+o.k+'</div>':'<p>Мы начали выполнение заказа. Обычно это занимает 1–5 минут.</p>')+'<div class="row" style="margin-top:14px"><button class="buy" data-go="orders" style="width:auto">Мои заказы</button><button class="btn" data-close>Закрыть</button></div></div>'};upd()}
+function buy(i){var p=P[i];if(!p)return;var rt=p[2]<5;checkout({t:p[0],p:p[2],step:rt?50:1,q:rt?100:1,k:!/^(Пополнение|Донат)$/.test(p[1]),note:p[3]})}
+function go(h){cur=h;st.adm=false;$("#mm").classList.remove("on");try{if(location.hash!="#"+h)history.pushState(null,"","#"+h)}catch(e){}route()}
+function fav(i){var p=P[i];if(!p)return;var f=sg("keyzo_fav",[]),k=f.indexOf(p[0]);if(k>-1)f.splice(k,1);else f.push(p[0]);ss("keyzo_fav",f);var on=k<0;toast(on?"Добавлено в избранное":"Удалено из избранного");document.querySelectorAll('[data-fav="'+i+'"]').forEach(function(b){b.classList.toggle("on",on)});if(cur=="favs")route()}
+function calc(){var v=+($("#amt")||{}).value||0;st.amt=v;if($("#bt"))$("#bt").textContent="Купить за "+fmt(v*RT[st.tab])+" ₽"}
+document.addEventListener("click",function(e){var t=e.target,x;if(!t.closest)return;
+if(!t.closest("#mm")&&!t.closest("[data-menu]"))$("#mm").classList.remove("on");
+if(!t.closest(".dd"))document.querySelectorAll(".ddm.on").forEach(function(m){m.classList.remove("on")});
+if(x=t.closest("[data-dd]")){var di="dd-"+x.dataset.dd;document.querySelectorAll(".ddm").forEach(function(m){m.classList.toggle("on",m.id==di&&!m.classList.contains("on"))});return}
+if(x=t.closest("[data-menu]")){e.preventDefault();var mm=$("#mm");if(!mm.classList.contains("on"))mm.innerHTML=menu();mm.classList.toggle("on");return}
+if(x=t.closest("[data-cur]")){CUR=x.dataset.cur;ss("keyzo_cur",CUR);tools();route();return}
+if(x=t.closest("[data-pt]")){var k=+x.dataset.pt;document.querySelectorAll("#pt button").forEach(function(b,j){b.classList.toggle("on",j==k)});document.querySelectorAll(".pp").forEach(function(d,j){d.style.display=j==k?"":"none"});return}
+if(x=t.closest("[data-hint]")){var hm=$("#mod");hm.innerHTML='<div class="mb"><button class="x" data-close aria-label="Close">×</button><h3 style="margin:0 0 10px">Как узнать логин?</h3><p>'+HT[st.tab]+'</p><button class="btn" data-close>Закрыть</button></div>';hm.className="mod on";return}
+if(x=t.closest("[data-close]")){closeM();return}
+if(t.id=="mod"){closeM();return}
+if(x=t.closest("[data-go]")){closeM();go(x.dataset.go);return}
+if(x=t.closest("[data-buy]")){e.preventDefault();buy(+x.dataset.buy);return}
+if(x=t.closest("[data-fav]")){e.preventDefault();fav(+x.dataset.fav);return}
+if(x=t.closest("[data-arr]")){var s=document.querySelector(".scw .sc");s.scrollBy({left:s.clientWidth*.8,behavior:"smooth"});return}
+if(x=t.closest("[data-more]")){st.n+=6;route();return}
+if(x=t.closest("[data-v]")){$("#amt").value=x.dataset.v;calc();return}
+if(x=t.closest("[data-t]")){st.lg=($("#lg").value||"");st.tab=x.dataset.t;route();return}
+if(x=t.closest("[data-c]")){e.preventDefault();st.cat=x.dataset.c;if(!x.classList.contains("chip")){st.q="";$("#q").value=""}go("catalog");return}
+if(x=t.closest("[data-q]")){e.preventDefault();st.q=x.dataset.q;st.cat="Все";go("catalog");return}
+if(x=t.closest("a[href^='#']")){e.preventDefault();go(x.getAttribute("href").slice(1)||"home");return}
+if(x=t.closest("[data-open]")){if(!t.closest("a,button"))go("p"+x.dataset.open)}});
+document.addEventListener("keydown",function(e){if(e.key=="Escape"){closeM();$("#mm").classList.remove("on");document.querySelectorAll(".ddm.on").forEach(function(m){m.classList.remove("on")})}});
+function route(){try{route0()}catch(e){console.error(e);var a=$("#app");if(a)a.textContent="Ошибка загрузки страницы. Обновите страницу."}}
+function route0(){var h=cur,a=$("#app"),m=h.match(/^p(\d+)$/),V={home:home,catalog:cat,faq:faq,seller:seller,reviews:reviews,contacts:contacts,legal:legal,favs:favs,orders:orders,profile:profile};
+a.innerHTML=st.adm?'<div id="adm"></div>':m?prod(+m[1]):(V[h]||home)();nav();if(last!==h)window.scrollTo(0,0);last=h;if($("#q"))$("#q").value=st.q;bind()}
+function bind(){if(st.adm)abind();
+var so=$("#so");if(so){so.value=st.so;so.onchange=function(){st.so=so.value;rl()};$("#mn").value=st.min||"";$("#mx").value=st.max||"";$("#mn").onchange=function(){st.min=+this.value||0;rl()};$("#mx").onchange=function(){st.max=+this.value||0;rl()};$("#dd").onclick=function(){st.dis=!st.dis;this.classList.toggle("on",st.dis);rl()}}
+if($("#amt")){$("#amt").oninput=calc;calc();$("#bt").onclick=function(){var v=+$("#amt").value,n=$("#lg").value.trim();if(!(v>=100))return toast("Минимальная сумма — 100 ₽");if(!n)return toast("Введите логин");checkout({t:"Пополнение "+st.tab,p:Math.round(v*RT[st.tab]),fixed:1,k:false,note:"Логин "+n+" · "+v+" ₽"})}}
+var sl=$("#sl");if(sl)sl.onclick=function(){var f=document.querySelectorAll("#app .fld");if(!f[0].value.trim()||!okm(f[1].value))return toast("Введите название магазина и email");f.forEach(function(x){x.value=""});toast("Отправлено, мы свяжемся с вами")};
+var ct=$("#ct");if(ct)ct.onclick=function(){var f=document.querySelectorAll("#app .fld");if(!okm(f[0].value)||!f[2].value.trim())return toast("Введите email и опишите проблему");f.forEach(function(x){x.value=""});toast("Отправлено, мы свяжемся с вами")};
+var pl=$("#pl");if(pl)pl.onclick=function(){var v=$("#pe").value.trim();if(!okm(v))return toast("Введите корректный email");ss("keyzo_user",{email:v});toast("Вы вошли");route()};
+var po=$("#po");if(po)po.onclick=function(){ss("keyzo_user",null);toast("Вы вышли");route()};
+var pu=$("#pu");if(pu)pu.textContent=(sg("keyzo_user",null)||{}).email||""}
+$("#q").addEventListener("input",function(){if(!this.value)st.q=""});
+$("#q").addEventListener("keydown",function(e){if(e.key=="Enter"){st.q=this.value;st.cat="Все";go("catalog")}});
+function sync(){cur=location.hash.slice(1)||"home";st.adm=false;$("#mm").classList.remove("on");route()}
+window.addEventListener("hashchange",sync);window.addEventListener("popstate",sync);route();countVisit();
+function faq(){var q=[["Как быстро придёт заказ?","Большинство товаров выдаются автоматически за 1–5 минут после оплаты."],["Можно ли вернуть деньги?","Да, если товар не подошёл или не активировался, напишите в поддержку в течение 24 часов."],["Нужно ли сообщать пароль от аккаунта?","Нет. Для пополнений достаточно логина или UID. Пароль мы не просим никогда."],["Какие способы оплаты доступны?","Банковские карты, СБП и электронные кошельки."],["Как связаться с поддержкой?","Через чат на сайте или по почте support@keyzo.example."]];return '<h2>Часто задаваемые вопросы</h2>'+q.map(function(x){return '<details><summary>'+x[0]+'</summary><p>'+x[1]+'</p></details>'}).join("")}
+function seller(){return '<h2>Станьте продавцом на keyzo</h2><div class="steps"><div class="box"><b>0 ₽ за подключение</b><br><span style="color:var(--mu)">Комиссия только с продаж.</span></div><div class="box"><b>Автовыдача товаров</b><br><span style="color:var(--mu)">Загрузите ключи, остальное сделаем мы.</span></div><div class="box"><b>Вывод за 1 день</b><br><span style="color:var(--mu)">На карту, СБП или кошелёк.</span></div></div><div class="box" style="margin-top:16px"><div class="row"><input class="fld" placeholder="Название магазина"><input class="fld" placeholder="Email"><button class="buy" id="sl" style="width:auto">Отправить заявку</button></div></div>'}
+function reviews(){var r=[["Алексей","Пополнил Steam за 2 минуты, всё пришло сразу.",5],["Мария","Взяла Spotify на год, работает без проблем.",5],["Игорь","Ключ не подошёл по региону, поддержка быстро заменила.",4],["Dmitry","Покупаю здесь уже второй год, цены лучше всех.",5]];return '<h2>Отзывы покупателей</h2><div class="grid">'+r.map(function(x){return '<div class="box"><b>'+x[0]+'</b> <span style="color:var(--am)">'+"★".repeat(x[2])+'</span><p style="color:var(--mu);margin:6px 0 0">'+x[1]+'</p></div>'}).join("")+'</div>'}
+function contacts(){return '<h2>Контакты</h2><div class="box">Почта поддержки: support@keyzo.example<br>Чат на сайте: ежедневно, 24/7<br>Telegram: @keyzo_support</div><div class="box"><div class="row"><input class="fld" placeholder="Ваш email"><input class="fld" placeholder="Номер заказа"></div><textarea class="fld" placeholder="Опишите проблему" style="width:100%;margin:10px 0;min-height:90px"></textarea><button class="buy" id="ct" style="width:auto;padding:10px 24px">Отправить</button></div>'}
+function abind(){var R=$("#adm");if(!R)return;R.textContent="";
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function dirty(){st.dirty=true;var d=$("#dy");if(d)d.textContent="● Есть несохранённые изменения"}
+function inp(v,fn,type,ph){var i=el("input","fld");if(type)i.type=type;i.value=v;i.placeholder=ph||"";i.setAttribute("aria-label",ph||"");i.oninput=function(){fn(type=="number"?+i.value:i.value);dirty()};return i}
+function save(){var a=el("a");a.href=URL.createObjectURL(new Blob(["window.PRODUCTS="+JSON.stringify(P)+";\nwindow.SITE="+JSON.stringify(S)+";\n"],{type:"text/javascript"}));a.download="products.js";document.body.append(a);a.click();a.remove();st.dirty=false;var d=$("#dy");if(d)d.textContent="";toast("Файл products.js скачан. Замените им старый файл.")}
+function pOv(c){c.textContent="";var h=el("div");h.append(el("p","m","Загружаю данные счётчика…"));c.append(h);
+loadStats(function(r){h.textContent="";var k=el("div","kpi"),sum=r.vals.reduce(function(a,b){return a+b},0);
+function card(t,v){var b=el("div","box");b.append(el("small",0,t),el("b",0,v));return b}
+k.append(card("Заходов сегодня",fmt(r.vals[6])),card("За 7 дней",fmt(sum)),card("Всего заходов",fmt(r.total)),card("Товаров / со скидкой",P.length+" / "+P.filter(function(p){return dc(p)>0}).length));
+var bx=el("div","box"),bars=el("div","bars"),mx=Math.max.apply(null,r.vals.concat(1));
+r.vals.forEach(function(v,i){var d=el("div"),b=el("i");b.style.height=Math.max(3,Math.round(v/mx*90))+"px";d.append(el("em",0,fmt(v)),b,el("span",0,new Date(r.days[i]+"T12:00:00").toLocaleDateString("ru",{weekday:"short"})));bars.append(d)});
+bx.append(el("b",0,"Заходы по дням"),bars);
+h.append(k,bx,el("p","m",r.ok?"Данные общего счётчика сайта. Один заход считается один раз за сеанс браузера.":"Не удалось связаться со счётчиком (нет интернета или он недоступен). Показаны заходы только из этого браузера."))})}
+function pPr(c){c.textContent="";var bar=el("div","ahb"),q=el("input","fld"),add=el("button","buy","+ Добавить товар");q.placeholder="Поиск по названию";q.style.flex="1 1 220px";add.style.cssText="width:auto;padding:12px 18px";bar.append(q,add);
+var hd=el("div","at ath"),L2=el("div");["Название","Категория","Цена, ₽","Скидка, %","Продаж","Описание",""].forEach(function(t){hd.append(el("span",0,t))});L2.style.marginTop="8px";
+function filter(){var v=q.value.trim().toLowerCase();L2.querySelectorAll(".at").forEach(function(r){r.style.display=!v||r.dataset.n.indexOf(v)>-1?"":"none"})}
+function list(){L2.textContent="";P.forEach(function(p,i){var r=el("div","at"),sel=el("select","fld"),del=el("button","btn","✕");r.style.marginBottom="8px";r.dataset.n=String(p[0]).toLowerCase();
+C.slice(2).concat([p[1]]).filter(function(k,j,a){return a.indexOf(k)==j}).forEach(function(k){var o=el("option",0,k);o.value=k;sel.append(o)});sel.value=p[1];sel.onchange=function(){p[1]=sel.value;dirty()};
+del.title="Удалить товар";del.setAttribute("aria-label","Удалить");del.onclick=function(){if(confirm("Удалить «"+p[0]+"»?")){P.splice(i,1);dirty();list()}};
+r.append(inp(p[0],function(v){p[0]=v;r.dataset.n=v.toLowerCase()},0,"Название"),sel,inp(p[2],function(v){p[2]=v},"number","Цена"),inp(p[5]||0,function(v){p[5]=Math.min(90,Math.max(0,v||0))},"number","Скидка %"),inp(p[4],function(v){p[4]=v},"number","Продаж"),inp(p[3],function(v){p[3]=v},0,"Описание"),del);L2.append(r)});filter()}
+q.oninput=filter;add.onclick=function(){P.unshift(["Новый товар","Игры",100,"Описание",0,0]);dirty();q.value="";list();toast("Товар добавлен в начало списка")};
+c.append(bar,el("p","m","Цена меньше 5 считается курсом за единицу (например, 1 Steam = 1.07 ₽). Старая цена и бейдж скидки на сайте считаются автоматически из цены и скидки."),hd,L2);list()}
+function pBn(c){c.textContent="";var pv=el("div","strip"),a=el("div"),t=el("b"),sb=el("div"),bt=el("span","btn");t.style.fontSize="20px";a.append(t,sb);bt.style.cssText="margin-left:auto;background:var(--am);color:#1A1530";pv.append(a,bt);
+function up(){t.textContent=S.t||"";sb.textContent=S.p||"";bt.textContent=S.b||""}
+function f(lbl,k){var w=el("div"),i=inp(S[k]||"",function(v){S[k]=v;up()},0,lbl);i.style.width="100%";w.append(el("div","m",lbl),i);w.style.marginBottom="10px";return w}
+c.append(el("p","m","Эта полоса показывается внизу главной страницы."),f("Заголовок","t"),f("Подзаголовок","p"),f("Текст кнопки","b"),el("div","m","Предпросмотр"),pv);up()}
+function pSt(c){c.textContent="";var i=inp(S.ns||"",function(v){S.ns=v.replace(/[^a-z0-9-]/gi,"")},0,"Имя счётчика");i.style.width="100%";i.style.maxWidth="420px";c.append(el("div","m","Имя счётчика заходов"),i,el("p","m","Под этим именем сайт считает заходы. Не меняйте без причины: новое имя начнёт счёт с нуля. Допустимы латиница, цифры и дефис."))}
+var hd=el("div","ah"),l1=el("div"),rb=el("div","ahb"),dy=el("span","dy"),sv=el("button","buy","Сохранить изменения"),ex=el("button","btn","Выйти");
+l1.append(el("h2",0,"Админка"),el("p","m","Меняйте товары, цены, скидки и тексты. Изменения видны сразу, но на сайте останутся только после сохранения."));
+dy.id="dy";dy.textContent=st.dirty?"● Есть несохранённые изменения":"";sv.style.cssText="width:auto;padding:12px 18px";sv.onclick=save;ex.onclick=function(){st.adm=false;toast("Админка выключена");route()};rb.append(dy,sv,ex);hd.append(l1,rb);
+var how=el("details","box");how.append(el("summary",0,"Как сохранить изменения на сайте"));var ol=el("ol","m");["Измените товары, цены или тексты.","Нажмите «Сохранить изменения»: скачается файл products.js.","Замените этим файлом старый products.js в репозитории GitHub, и сайт обновится."].forEach(function(t){ol.append(el("li",0,t))});how.append(ol);
+var tb=el("div","atabs"),pn=el("div"),T=[["o","Обзор",pOv],["p","Товары",pPr],["b","Баннер",pBn],["s","Настройки",pSt]];
+function show(k){st.at=k;tb.querySelectorAll("button").forEach(function(b){b.classList.toggle("on",b.dataset.k==k)});T.forEach(function(t){if(t[0]==k)t[2](pn)})}
+T.forEach(function(t){var b=el("button",0,t[1]);b.dataset.k=t[0];b.onclick=function(){show(t[0])};tb.append(b)});
+R.append(hd,how,tb,pn);show(st.at||"o")}
+var kb="",kt,prev;
+document.addEventListener("keydown",function(e){var t=e.target.tagName;if(t=="INPUT"||t=="TEXTAREA"||e.ctrlKey||e.metaKey||e.altKey||e.key.length!=1)return;kb=(kb+e.key).slice(-4);clearTimeout(kt);kt=setTimeout(function(){kb=""},2000);if(kb=="9126"){kb="";st.adm=!st.adm;toast(st.adm?"Админка включена":"Админка выключена");route()}});
+document.addEventListener("click",function(e){if(st.adm&&e.target.closest&&e.target.closest("header a,footer a,.sup")){st.adm=false;setTimeout(route,0)}},true);
+function legal(){var s=[["Публичная оферта","Покупая на keyzo, вы соглашаетесь с условиями этой оферты. Товары предоставляются в цифровом виде сразу после оплаты."],["Политика конфиденциальности","Мы храним только данные, нужные для выполнения заказа: email и номер заказа. Мы не передаём их третьим лицам."],["Политика возврата средств","Если товар не подошёл или не активировался, напишите в поддержку в течение 24 часов, и мы вернём деньги или заменим товар."]];return '<h2>Правовая информация</h2>'+s.map(function(x){return '<div class="box"><b>'+x[0]+'</b><p style="color:var(--mu);margin:6px 0 0">'+x[1]+'</p></div>'}).join("")+'<p class="m">Это шаблонный текст. Замените его своими условиями.</p>'}
+function okm(e){return /^\S+@\S+\.\S+$/.test(e.trim())}
+var D=`Начать продавать|Empezar a vender|Start selling
+Найти товар|Buscar producto|Search products
+Каталог товаров|Catálogo de productos|Product catalog
+Каталог|Catálogo|Catalog
+Игры и подписки от проверенных продавцов.|Juegos y suscripciones de vendedores verificados.|Games and subscriptions from verified sellers.
+Игры|Juegos|Games
+Донат|Compras en juegos|In-game items
+Пополнение сервисов|Recarga de servicios|Service top-up
+Пополнение по UID, без пароля|Recarga por UID, sin contraseña|Top-up by UID, no password
+Пополнение|Recargas|Top-ups
+Подарочные карты|Tarjetas de regalo|Gift cards
+Подписка на ваш аккаунт|Suscripción para tu cuenta|Subscription for your account
+Подписки|Suscripciones|Subscriptions
+ИИ-сервисы|Servicios de IA|AI services
+Отзывы покупателей|Opiniones de clientes|Customer reviews
+Отзывы|Opiniones|Reviews
+Помощь|Ayuda|Help
+Стать продавцом на keyzo|Hazte vendedor en keyzo|Become a seller on keyzo
+Станьте продавцом на keyzo|Hazte vendedor en keyzo|Become a seller on keyzo
+Стать продавцом|Hacerse vendedor|Become a seller
+Партнёрская программа|Programa de afiliados|Affiliate program
+Правила для продавца|Reglas para vendedores|Seller rules
+Автоматическое B2B-решение|Solución B2B automática|Automated B2B solution
+Партнёрам|Para socios|For partners
+Покупателям|Para compradores|For buyers
+Часто задаваемые вопросы|Preguntas frecuentes|Frequently asked questions
+Политика возврата средств|Política de reembolsos|Refund policy
+Контакты|Contacto|Contacts
+Публичная оферта|Oferta pública|Public offer
+Политика конфиденциальности|Política de privacidad|Privacy policy
+Все права защищены|Todos los derechos reservados|All rights reserved
+Поддержка|Soporte|Support
+Почта поддержки|Correo de soporte|Support email
+Чат на сайте: ежедневно, 24/7|Chat en el sitio: todos los días, 24/7|Site chat: every day, 24/7
+Ключи, подписки и пополнения за пару минут|Claves, suscripciones y recargas en minutos|Keys, subscriptions and top-ups in minutes
+Ключи, подписки и пополнения за минуты|Claves, suscripciones y recargas en minutos|Keys, subscriptions and top-ups in minutes
+Автоматическая выдача 24/7. Деньги вернём, если товар не подошёл.|Entrega automática 24/7. Te devolvemos el dinero si el producto no te sirve.|Automatic delivery 24/7. We refund you if the product doesn’t fit.
+Автоматическая выдача 24/7.|Entrega automática 24/7.|Automatic delivery 24/7.
+Открыть каталог|Abrir catálogo|Open catalog
+Скидки до 90%|Descuentos de hasta el 90%|Up to 90% off
+Смотреть|Ver|View
+Логин |Usuario |Login 
+Купить за|Comprar por|Buy for
+Купить|Comprar|Buy
+Хиты продаж|Más vendidos|Bestsellers
+Как это работает|Cómo funciona|How it works
+Выберите товар|Elige un producto|Choose a product
+Найдите нужное в каталоге или через поиск.|Encuéntralo en el catálogo o con el buscador.|Find it in the catalog or via search.
+Оплатите удобным способом|Paga como prefieras|Pay your way
+Карта, СБП или кошелёк.|Tarjeta, SBP o monedero.|Card, SBP or e-wallet.
+Получите заказ|Recibe tu pedido|Get your order
+Код придёт на почту, пополнение — на аккаунт.|El código llega por correo y la recarga, a tu cuenta.|The code arrives by email, the top-up goes to your account.
+Новинки|Novedades|New arrivals
+продаж|ventas|sales
+Все|Todos|All
+Ничего не найдено. Попробуйте другой запрос или откройте весь каталог.|No se encontró nada. Prueba otra búsqueda o abre todo el catálogo.|Nothing found. Try another search or open the full catalog.
+Автовыдача · в наличии|Entrega automática · en stock|Instant delivery · in stock
+Автовыдача товаров|Entrega automática de productos|Automatic product delivery
+Продано|Vendido|Sold
+ раз.| veces.| times.
+Email для получения заказа|Correo para recibir el pedido|Email to receive your order
+Гарантия 24 часа. Если товар не подошёл, вернём деньги или заменим.|Garantía de 24 horas. Si el producto no sirve, devolvemos el dinero o lo cambiamos.|24-hour guarantee. If the product doesn’t fit, we refund or replace it.
+Похожие товары|Productos similares|Similar products
+Как быстро придёт заказ?|¿Qué tan rápido llega el pedido?|How fast will my order arrive?
+Большинство товаров выдаются автоматически за 1–5 минут после оплаты.|La mayoría de los productos se entregan automáticamente en 1–5 minutos tras el pago.|Most products are delivered automatically within 1–5 minutes after payment.
+Можно ли вернуть деньги?|¿Se puede recibir un reembolso?|Can I get a refund?
+Да, если товар не подошёл или не активировался, напишите в поддержку в течение 24 часов.|Sí, si el producto no sirvió o no se activó, escribe a soporte en 24 horas.|Yes, if the product didn’t fit or didn’t activate, contact support within 24 hours.
+Нужно ли сообщать пароль от аккаунта?|¿Hay que dar la contraseña de la cuenta?|Do I need to share my account password?
+Нет. Для пополнений достаточно логина или UID. Пароль мы не просим никогда.|No. Para las recargas basta el usuario o el UID. Nunca pedimos la contraseña.|No. A login or UID is enough for top-ups. We never ask for your password.
+Какие способы оплаты доступны?|¿Qué métodos de pago hay?|Which payment methods are available?
+Банковские карты, СБП и электронные кошельки.|Tarjetas bancarias, SBP y monederos electrónicos.|Bank cards, SBP and e-wallets.
+Как связаться с поддержкой?|¿Cómo contactar con soporte?|How do I contact support?
+Через чат на сайте или по почте|Por el chat del sitio o por correo|Via the site chat or by email
+0 ₽ за подключение|0 ₽ por conexión|0 ₽ to join
+Комиссия только с продаж.|Comisión solo por ventas.|Commission on sales only.
+Загрузите ключи, остальное сделаем мы.|Sube las claves, del resto nos encargamos nosotros.|Upload your keys, we’ll do the rest.
+Вывод за 1 день|Retiro en 1 día|Withdrawal in 1 day
+На карту, СБП или кошелёк.|A tarjeta, SBP o monedero.|To card, SBP or e-wallet.
+Название магазина|Nombre de la tienda|Store name
+Отправить заявку|Enviar solicitud|Submit application
+Отправить|Enviar|Send
+Алексей|Alexey|Alexey
+Мария|María|Maria
+Игорь|Igor|Igor
+Пополнил Steam за 2 минуты, всё пришло сразу.|Recargué Steam en 2 minutos, todo llegó al instante.|Topped up Steam in 2 minutes, everything arrived instantly.
+Взяла Spotify на год, работает без проблем.|Compré Spotify por un año, funciona sin problemas.|Got Spotify for a year, works without issues.
+Ключ не подошёл по региону, поддержка быстро заменила.|La clave no servía para mi región, soporte la cambió rápido.|The key didn’t match my region, support replaced it quickly.
+Покупаю здесь уже второй год, цены лучше всех.|Compro aquí desde hace dos años, los mejores precios.|I’ve been buying here for two years, best prices around.
+Ваш email|Tu correo|Your email
+Номер заказа|Número de pedido|Order number
+Опишите проблему|Describe el problema|Describe the problem
+Демо: оплата не подключена|Demo: el pago no está conectado|Demo: payment is not connected
+Минимальная сумма — 100 ₽|Importe mínimo: 100 ₽|Minimum amount: 100 ₽
+Введите логин|Introduce tu usuario|Enter your login
+Демо: заказ оформлен|Demo: pedido realizado|Demo: order placed
+Отправлено, мы свяжемся с вами|Enviado, te contactaremos|Sent, we’ll contact you
+Админка включена|Panel de administración activado|Admin mode on
+Введите название магазина и email|Introduce el nombre de la tienda y el correo|Enter your store name and email
+Введите email и опишите проблему|Introduce tu correo y describe el problema|Enter your email and describe the problem
+Введите корректный email|Introduce un correo válido|Enter a valid email
+Правовая информация|Información legal|Legal information
+Покупая на keyzo, вы соглашаетесь с условиями этой оферты. Товары предоставляются в цифровом виде сразу после оплаты.|Al comprar en keyzo aceptas las condiciones de esta oferta. Los productos se entregan en formato digital justo después del pago.|By buying on keyzo you accept the terms of this offer. Products are delivered digitally right after payment.
+Мы храним только данные, нужные для выполнения заказа: email и номер заказа. Мы не передаём их третьим лицам.|Solo guardamos los datos necesarios para cumplir el pedido: correo y número de pedido. No los compartimos con terceros.|We only store the data needed to fulfill your order: email and order number. We never share it with third parties.
+Если товар не подошёл или не активировался, напишите в поддержку в течение 24 часов, и мы вернём деньги или заменим товар.|Si el producto no sirvió o no se activó, escribe a soporte en 24 horas y devolveremos el dinero o lo cambiaremos.|If the product didn’t fit or didn’t activate, contact support within 24 hours and we’ll refund or replace it.
+Это шаблонный текст. Замените его своими условиями.|Este es un texto de plantilla. Sustitúyelo por tus propias condiciones.|This is placeholder text. Replace it with your own terms.
+Избранное|Favoritos|Favorites
+Заказы|Pedidos|Orders
+Профиль|Perfil|Profile
+Все товары|Todos los productos|All products
+Показать ещё|Mostrar más|Show more
+Скидки 90%|Descuentos 90%|90% off
+Пополнение PSN|Recarga PSN|PSN top-up
+Пополнение Steam|Recarga Steam|Steam top-up
+Оформление заказа|Finalizar pedido|Checkout
+Количество|Cantidad|Quantity
+Способ оплаты|Método de pago|Payment method
+Банковская карта|Tarjeta bancaria|Bank card
+Электронный кошелёк|Monedero electrónico|E-wallet
+К оплате|A pagar|Total
+Оплатить|Pagar|Pay
+Демо: деньги не списываются.|Demo: no se cobra dinero.|Demo: no money is charged.
+Заказ оформлен!|¡Pedido realizado!|Order placed!
+Ваш код|Tu código|Your code
+Мы начали выполнение заказа. Обычно это занимает 1–5 минут.|Hemos empezado a procesar tu pedido. Suele tardar 1–5 minutos.|We started processing your order. It usually takes 1–5 minutes.
+Мои заказы|Mis pedidos|My orders
+Закрыть|Cerrar|Close
+Выполнен|Completado|Completed
+Пока пусто. Оформите первый заказ в каталоге.|Todavía no hay nada. Haz tu primer pedido en el catálogo.|Nothing here yet. Place your first order in the catalog.
+В избранном пока ничего нет. Нажмите ♥ на товаре.|Aún no hay favoritos. Pulsa ♥ en un producto.|No favorites yet. Tap ♥ on a product.
+Добавлено в избранное|Añadido a favoritos|Added to favorites
+Удалено из избранного|Eliminado de favoritos|Removed from favorites
+В избранное|A favoritos|Add to favorites
+Вход в профиль|Iniciar sesión|Sign in
+Войти|Entrar|Sign in
+Выйти|Salir|Sign out
+Вы вошли как|Has iniciado sesión como|Signed in as
+Заказов:|Pedidos:|Orders:
+В избранном:|En favoritos:|In favorites:
+Вы вошли|Has iniciado sesión|Signed in
+Вы вышли|Has cerrado sesión|Signed out
+Популярное|Popular|Popular
+СБП|SBP|SBP
+Скидки|Ofertas|Deals
+Сортировка|Ordenar|Sort by
+Сначала популярные|Más populares|Most popular
+Сначала дешевле|Precio: menor a mayor|Price: low to high
+Сначала дороже|Precio: mayor a menor|Price: high to low
+Больше скидка|Mayor descuento|Biggest discount
+Только со скидкой|Solo con descuento|Discounted only
+От, ₽|Desde, ₽|From, ₽
+До, ₽|Hasta, ₽|To, ₽
+Выдача: мгновенно|Entrega: instantánea|Delivery: instant
+Выдача: 1–5 минут|Entrega: 1–5 minutos|Delivery: 1–5 minutes
+Описание|Descripción|Description
+Как активировать|Cómo activar|How to activate
+Отзывов:|Opiniones:|Reviews:
+Оплатите заказ и получите код или ключ.|Paga el pedido y recibe el código o la clave.|Pay for the order and get your code or key.
+Откройте магазин или клиент и выберите «Активировать код».|Abre la tienda o el cliente y elige «Activar código».|Open the store or client and choose “Redeem code”.
+Введите код и подтвердите активацию.|Introduce el código y confirma la activación.|Enter the code and confirm activation.
+Укажите логин, UID или ID аккаунта.|Indica el usuario, UID o ID de la cuenta.|Enter your login, UID or account ID.
+Оплатите заказ.|Paga el pedido.|Pay for the order.
+Баланс или валюта придут в течение 1–5 минут.|El saldo o la moneda llegan en 1–5 minutos.|The balance or currency arrives within 1–5 minutes.
+Напишите в поддержку и укажите номер заказа.|Escribe a soporte e indica el número de pedido.|Contact support and give your order number.
+Подписка включится на вашем аккаунте.|La suscripción se activará en tu cuenta.|The subscription will be activated on your account.
+Как узнать логин?|¿Cómo saber mi usuario?|How do I find my login?
+Steam: нажмите на ник справа вверху, затем «Об аккаунте». Логин указан под названием аккаунта.|Steam: pulsa tu nombre arriba a la derecha y luego «Acerca de la cuenta». El usuario aparece bajo el nombre de la cuenta.|Steam: click your name at the top right, then “About account”. The login is shown under the account name.
+PlayStation: откройте «Настройки», затем «Пользователи и аккаунты». Онлайн-ID указан в профиле.|PlayStation: abre «Ajustes» y luego «Usuarios y cuentas». El ID online está en tu perfil.|PlayStation: open “Settings”, then “Users and Accounts”. Your online ID is in your profile.
+Telegram: откройте «Настройки», имя пользователя начинается с @.|Telegram: abre «Ajustes»; el nombre de usuario empieza por @.|Telegram: open “Settings”; your username starts with @.
+Apple: ваш Apple ID — это email, указанный в настройках аккаунта.|Apple: tu Apple ID es el correo indicado en los ajustes de la cuenta.|Apple: your Apple ID is the email shown in your account settings.
+Оплачен|Pagado|Paid
+Выдан|Entregado|Delivered
+Завершён|Completado|Completed
+Админка выключена|Panel de administración desactivado|Admin mode off
+пополнение кошелька|recarga de monedero|wallet top-up
+: пополнение|: recarga|: top-up
+RUB, автоматически за 1–5 минут|RUB, automático en 1–5 minutos|RUB, automatic in 1–5 minutes
+Казахстан, тенге (KZT), 24/7|Kazajistán, tenge (KZT), 24/7|Kazakhstan, tenge (KZT), 24/7
+Регион |Región |Region 
+регион |región |region 
+цифровые товары и ключи|productos digitales y claves|digital goods and keys
+Турция|Turquía|Turkey
+США|EE. UU.|USA
+РФ|Rusia|Russia
+СНГ|CEI|CIS
+, код на 1000 TL|, código por 1000 TL|, code for 1000 TL
+, код на почту|, código por correo|, code by email
+карта|tarjeta|card
+на 1 месяц|por 1 mes|for 1 month
+на 3 месяца|por 3 meses|for 3 months
+на 1 год|por 1 año|for 1 year
+Моментальная доставка на аккаунт|Entrega instantánea a tu cuenta|Instant delivery to your account
+Активация по юзернейму|Activación por nombre de usuario|Activation by username
+Индивидуальный план, без VPN|Plan individual, sin VPN|Individual plan, no VPN
+Ключ активации|Clave de activación|Activation key
+кристаллов|cristales|crystals
+Баланс на аккаунт|Saldo en la cuenta|Account balance
+Лицензия на ваш аккаунт Microsoft|Licencia para tu cuenta de Microsoft|License for your Microsoft account
+активация по коду|activación por código|activation by code
+Подарочная ссылка, моментально|Enlace de regalo, al instante|Gift link, instant
+Код для магазина приложений|Código para la tienda de aplicaciones|Code for the app store`.trim().split("\n").map(function(l){return l.split("|")}).sort(function(a,b){return b[0].length-a[0].length});
+var L="ru",T0=document.title,mo=new MutationObserver(function(){run()});
+(function(){var v;try{v=localStorage.getItem("keyzo_lang")}catch(e){}if(!/^(ru|es|en)$/.test(v)){var n=((navigator.languages&&navigator.languages[0])||navigator.language||"en").slice(0,2).toLowerCase();v=/^(ru|es|en)$/.test(n)?n:/^(be|uk|kk|ky)$/.test(n)?"ru":"en"}L=v})();
+function tx(s){if(L=="ru")return s;var c=L=="es"?1:2;for(var i=0;i<D.length;i++)if(s.indexOf(D[i][0])>-1)s=s.split(D[i][0]).join(D[i][c]);return s}
+function wk(n){if(n.nodeType==3){var p=n.parentNode&&n.parentNode.nodeName;if(p=="SCRIPT"||p=="STYLE"||p=="TEXTAREA")return;if(n._t===undefined||n.nodeValue!==n._t)n._o=n.nodeValue;var t=tx(n._o);n._t=t;if(n.nodeValue!==t)n.nodeValue=t}else if(n.nodeType==1){if(n.id=="adm"||n.nodeName=="SCRIPT"||n.nodeName=="STYLE")return;if(n.hasAttribute("placeholder")){var a=n.getAttribute("placeholder");if(n._pt===undefined||a!==n._pt)n._po=a;var q=tx(n._po);n._pt=q;if(a!==q)n.setAttribute("placeholder",q)}for(var c=n.firstChild;c;c=c.nextSibling)wk(c)}}
+function run(){mo.disconnect();wk(document.body);document.title=tx(T0);document.documentElement.lang=L;mo.observe(document.body,{childList:true,subtree:true,characterData:true})}
+function setL(l){L=l;try{localStorage.setItem("keyzo_lang",l)}catch(e){}tools();run()}
+function setT(t){document.documentElement.setAttribute("data-theme",t);try{localStorage.setItem("keyzo_theme",t)}catch(e){}tools()}
+function tools(){var th=document.documentElement.getAttribute("data-theme"),c=CS[CUR]||CS.RUB,LN={ru:"Русский",es:"Español",en:"English"};
+var h='<div class="dd"><button data-dd="c" aria-label="Currency">'+c[0]+' '+CUR+' ▾</button><div class="ddm" id="dd-c">'+Object.keys(CS).map(function(k){return '<button class="'+(k==CUR?"on":"")+'" data-cur="'+k+'"><b>'+CS[k][0]+'</b> '+k+'</button>'}).join("")+'</div></div><div class="dd"><button data-dd="l" aria-label="Language">'+L.toUpperCase()+' ▾</button><div class="ddm" id="dd-l">'+["ru","es","en"].map(function(l){return '<button class="'+(l==L?"on":"")+'" data-l="'+l+'">'+LN[l]+'</button>'}).join("")+'<div class="thm"><button class="'+(th=="light"?"on":"")+'" data-th="light" aria-label="Light">\u2600</button><button class="'+(th!="light"?"on":"")+'" data-th="dark" aria-label="Dark">\u263E</button></div></div></div>';
+var e=$("#tools");e.innerHTML=h;e.onclick=function(ev){var b=ev.target.closest("button");if(!b)return;if(b.dataset.l)setL(b.dataset.l);else if(b.dataset.th)setT(b.dataset.th)}}
+try{matchMedia("(prefers-color-scheme: light)").addEventListener("change",function(e){var v;try{v=localStorage.getItem("keyzo_theme")}catch(x){}if(!v){document.documentElement.setAttribute("data-theme",e.matches?"light":"dark");tools()}})}catch(e){}
+tools();run();
+</script></body></html>
